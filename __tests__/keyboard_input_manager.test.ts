@@ -80,8 +80,15 @@ describe('KeyboardInputManager', () => {
 
   describe('constructor', () => {
     it('Sets events and listens', async () => {
-      // Lab 3: Git Bisect
-      expect(true).toBe(false)
+// Lab 3: Git Bisect
+const listen = jest
+  .spyOn(KeyboardInputManager, 'listen')
+  .mockImplementation(() => {})
+
+new KeyboardInputManager()
+
+expect(KeyboardInputManager.events).toMatchObject({})
+expect(listen).toHaveBeenCalledTimes(1)
     })
   })
 
